@@ -4,7 +4,6 @@ app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    # 初期値
     goal = 0
     current = 0
     add_amount = 0
@@ -14,12 +13,10 @@ def index():
 
     if request.method == 'POST':
         try:
-            # フォームから値を取得
             goal = int(request.form.get('goal', 0))
             current = int(request.form.get('current', 0))
             add_amount = int(request.form.get('add_amount', 0))
             
-            # 計算
             new_total = current + add_amount
             remaining = goal - new_total
             
