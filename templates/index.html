@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>シンプル貯金アプリ (Flask版)</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding-top: 50px; }
+        .container { border: 1px solid #ccc; display: inline-block; padding: 20px; border-radius: 10px; }
+        input { margin: 10px; padding: 5px; }
+        .message { color: blue; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>貯金アプリ</h1>
+        <form method="POST">
+            目標金額: <br><input type="number" name="goal" value="{{ goal }}"><br>
+            現在の合計: <br><input type="number" name="current" value="{{ total }}"><br>
+            今回の貯金額: <br><input type="number" name="add_amount" required><br>
+            <button type="submit">貯金を追加</button>
+        </form>
+
+        <div class="message">
+            <p>現在の合計: {{ total }}円</p>
+            <p>{{ message }}</p>
+        </div>
+    </div>
+</body>
+</html>
