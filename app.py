@@ -23,8 +23,6 @@ def index():
             if remaining <= 0:
                 message = "おめでとう！目標達成です！"
                 remaining = 0
-            if add_amount < 0:
-                message = "貯金額には正の数を入れてください。"
             else:
                 message = f"目標まであと {remaining}円 です。"
                 
